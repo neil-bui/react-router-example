@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="posts" element={<Posts />}>
+        <Route path="posts" element={<Posts />} >
           <Route path="/" element={<PostLists />} />
           <Route path=":slug" element={<Post />} />
         </Route>
@@ -62,7 +62,7 @@ function Posts() {
 }
 
 function Post() {
-  const { slug } = useParams;
+  const { slug } = useParams();
   const post = BlogPosts[slug];
   const { title, description } = post;
   return (
